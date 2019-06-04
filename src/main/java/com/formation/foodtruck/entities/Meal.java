@@ -21,7 +21,7 @@ public class Meal implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="meal_id")
-	private int mealId;
+	private Integer mealId;
 
 	private Time end;
 

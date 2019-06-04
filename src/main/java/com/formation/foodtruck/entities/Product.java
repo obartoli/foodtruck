@@ -13,14 +13,18 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Product.findAll", query="SELECT p FROM Product p")
+@NamedQueries({
+	@NamedQuery(name="Product.findAll", query="SELECT p FROM Product p"),
+	@NamedQuery(name="Product.findByMeal", query="SELECT p FROM Product p"), //TODO trier sur les repas
+	@NamedQuery(name="Product.findByFamily", query="SELECT p FROM Product p WHERE p.family.familyId = :familyId")
+})
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="product_id")
-	private int productId;
+	private Integer productId;
 
 	private String availability;
 

@@ -20,7 +20,7 @@ public class Family implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="family_id")
-	private int familyId;
+	private Integer familyId;
 
 	private String type;
 
